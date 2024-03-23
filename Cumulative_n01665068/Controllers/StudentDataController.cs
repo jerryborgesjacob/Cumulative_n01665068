@@ -13,11 +13,11 @@ namespace Cumulative_n01665068.Controllers
         private SchoolContext School = new SchoolContext();
 
         /// <summary>
-        /// Connects to the Database and provides the First and Last names Of the Students 
+        /// Connects to the Database and provides the details Of the Students 
         /// </summary>
-        /// <returns>The First and Last Names of the Students</returns>
+        /// <returns>The Details of the Students</returns>
         /// <example>
-        /// localhost.xx/api/StudentData -> The List of Students in an XML File (The data is too big to display a sample output)
+        /// localhost.xx/api/StudentData -> The List of Students in an XML File
         /// </example>
 
         [HttpGet]
@@ -39,7 +39,7 @@ namespace Cumulative_n01665068.Controllers
             //Gather the result set into a variable
             MySqlDataReader ResultSet = cmd.ExecuteReader();
 
-            //Create a list of Teachers' Details that will be stored later
+            //Create a list of Students' Details that will be stored later
             List<Student> Students = new List<Student> { };
 
             //Loop Through the Result Set
@@ -55,7 +55,7 @@ namespace Cumulative_n01665068.Controllers
                 //Creating a New Object to store the data
                 Student NewStudent = new Student();
 
-                //Adding the Teachers' Details to the List created above
+                //Adding the Students' Details to the List created above
                 NewStudent.StudentID = StudentID;
                 NewStudent.StudentName = StudentName;
                 NewStudent.SdtNumber = SdtNumber;
@@ -69,7 +69,7 @@ namespace Cumulative_n01665068.Controllers
             //Close the connection between the Database and the Web Server
             Conn.Close();
 
-            //Return the list of Teachers' Names
+            //Return the list of Students' Names
             return Students;
 
 
@@ -77,12 +77,11 @@ namespace Cumulative_n01665068.Controllers
 
 
         /// <summary>
-        /// Connects to the Database and provides all the Details about a Student (using their TeacherID) 
+        /// Connects to the Database and provides all the Details about a Student (using their StudentID) 
         /// </summary>
         /// <returns>All Details of the specific Student in the database</returns>
         /// <example>
-        /// localhost.xx/api/StudentsData/FindStudent/4 -> Displays EmpNumber, HireDate, Salary, TeacherID and Full Name of Jessica Morris. 
-        /// (I tried to copy and paste the XML output, but the tags in XML started throwing errors in the code)
+        /// localhost.xx/api/StudentsData/FindStudent/4 -> Displays the Student's Full Name, StudentID, StudentNumber and Enrollment Date of Mario English
         /// </example>
 
         [HttpGet]
@@ -119,7 +118,7 @@ namespace Cumulative_n01665068.Controllers
                 string SdtNumber = ResultSet["studentnumber"].ToString();
                 DateTime Enrol = Convert.ToDateTime(ResultSet["enroldate"]);
 
-                //Adding the Teachers' Details to the List created above
+                //Adding the Students' Details to the List created above
                 NewStudent.StudentID = StudentID;
                 NewStudent.StudentName = StudentName;
                 NewStudent.SdtNumber = SdtNumber;

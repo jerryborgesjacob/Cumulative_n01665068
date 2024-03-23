@@ -1,0 +1,18 @@
+﻿@model List<Cumulative_n01665068.Models.Class>
+@{
+    ViewBag.Title = "List";
+}
+
+<!---This View Displays the list of all Classes. Any Class Name can be clicked to view their full details-->
+<h1>Classes</h1>
+
+@foreach (var Class in Model)
+{
+    <div>
+        <a href="/Class/Show/@Class.ClassID">@Class.ClassName</a>
+    </div>
+}
+
+
+
+

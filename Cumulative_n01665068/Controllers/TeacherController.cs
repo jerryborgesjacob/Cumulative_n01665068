@@ -29,7 +29,7 @@ namespace Cumulative_n01665068.Controllers
 
 
         /// <summary>
-        /// This method is used to show the detials of the selected teacher
+        /// This method is used to show the details of the selected teacher
         /// </summary>
         /// <returns>A View that displays all the Details of the teacher selected in the List View</returns>
         public ActionResult Show(int Id)

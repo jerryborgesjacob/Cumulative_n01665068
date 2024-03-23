@@ -13,9 +13,9 @@ namespace Cumulative_n01665068.Controllers
         private SchoolContext School = new SchoolContext();
 
         /// <summary>
-        /// Connects to the Database and provides the First and Last names Of the Teachers 
+        /// Connects to the Database and provides the details of Teachers in the Database 
         /// </summary>
-        /// <returns>The First and Last Names of the Teachers</returns>
+        /// <returns>The Details of the Teachers</returns>
         /// <example>
         /// localhost.xx/api/TeacherData -> The List of Teachers in an XML File (The data is too big to display a sample output)
         /// </example>
